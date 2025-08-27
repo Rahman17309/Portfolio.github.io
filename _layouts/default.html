@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdul Rahman — Data Analytics Portfolio</title>
+  <meta name="description" content="Abdul Rahman • Data Analyst & Business Intelligence • Dubai, UAE" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#1c3192;          /* primary brand (from your preference) */
+      --brand-2:#5b6ad6;        /* accent gradient */
+      --ink:#0f1220;            /* body text */
+      --muted:#58607a;          /* secondary text */
+      --bg:#f7f9ff;             /* page background */
+      --card:#ffffff;           /* card background */
+      --ring: rgba(28,49,146,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Outfit",system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at -10% -20%, rgba(28,49,146,.09), transparent 60%),
+                  radial-gradient(900px 500px at 110% 10%, rgba(91,106,214,.08), transparent 60%),
+                  var(--bg);
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{ text-decoration:underline }
+    .container{ max-width:1100px; margin:0 auto; padding:20px 22px }
+
+    /* Hero */
+    .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:24px 0 6px }
+    .hero-card{
+      background:var(--card);
+      border:1px solid rgba(15,18,32,.07);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:0 10px 35px rgba(15,18,32,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:""; position:absolute; inset:-6px; z-index:0;
+      background:radial-gradient(500px 180px at 0% 0%, rgba(28,49,146,.10), transparent 50%);
+      pointer-events:none;
+    }
+    .kicker{ color:var(--brand); text-transform:uppercase; letter-spacing:.18em; font-weight:700; font-size:.9rem }
+    h1{ margin:.2rem 0 .6rem; font-size:clamp(28px,5vw,44px); line-height:1.1 }
+    .subtitle{ color:var(--muted); font-size:clamp(15px,2.2vw,18px); margin:0 0 14px }
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 18px }
+    .badge{ padding:8px 12px; border-radius:999px; border:1px solid rgba(15,18,32,.08); background:#fff; font-weight:600; box-shadow:0 2px 10px rgba(15,18,32,.05)}
+    .cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px }
+    .btn{ appearance:none; border:none; padding:12px 16px; border-radius:14px; font-weight:800; letter-spacing:.3px; cursor:pointer; text-decoration:none; transition:transform .08s ease, box-shadow .2s ease, background .2s ease; outline:2px solid transparent; outline-offset:2px }
+    .btn:focus-visible{ outline:2px solid var(--ring) }
+    .btn-primary{ background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; box-shadow:0 10px 20px rgba(28,49,146,.22) }
+    .btn-primary:hover{ transform:translateY(-1px) }
+    .btn-ghost{ background:#fff; color:var(--brand); border:1px solid rgba(28,49,146,.25); box-shadow:0 8px 18px rgba(15,18,32,.06) }
+
+    .hero-side{
+      display:grid; gap:12px
+    }
+    .info{
+      background:var(--card); border:1px solid rgba(15,18,32,.07); border-radius:20px; padding:18px
+    }
+    .info ul{ list-style:none; padding:0; margin:0; display:grid; gap:8px }
+    .info li{ display:flex; gap:8px; align-items:center; font-size:.98rem }
+    .info strong{ min-width:96px }
+
+    /* Section headers */
+    .section{ margin:36px 0 }
+    .section h2{ font-size:clamp(20px,2.6vw,28px); margin:0 0 12px }
+    .section p.lead{ color:var(--muted); margin:0 0 12px }
+
+    /* Cards grid */
+    .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px }
+    .card{ background:var(--card); border:1px solid rgba(15,18,32,.07); border-radius:18px; padding:16px; box-shadow:0 6px 20px rgba(15,18,32,.06) }
+    .span-4{ grid-column: span 4 }
+    .span-6{ grid-column: span 6 }
+    .span-12{ grid-column: span 12 }
+
+    .metric{ display:flex; align-items:center; justify-content:space-between; gap:10px }
+    .metric b{ font-size:1.6rem }
+    .muted{ color:var(--muted) }
+
+    .proj h3{ margin:.2rem 0 .4rem; font-size:1.1rem }
+    .proj p{ margin:0; color:var(--muted) }
+
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px }
+    .tag{ font-size:.82rem; padding:6px 10px; border-radius:999px; background:#f0f2ff; color:var(--brand); border:1px solid rgba(28,49,146,.18); font-weight:700 }
+
+    /* Footer */
+    footer{ text-align:center; color:var(--muted); margin:26px 0 10px }
+
+    /* Responsive */
+    @media (max-width: 900px){ .hero{ grid-template-columns:1fr } }
+    @media (max-width: 720px){ .span-6{ grid-column: span 12 } .span-4{ grid-column: span 12 } }
+
+    /* Fun micro-animations */
+    .shine{ position:relative; overflow:hidden }
+    .shine:after{ content:""; position:absolute; top:0; left:-150%; width:50%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent); transform:skewX(-20deg); animation: shine 6s infinite }
+    @keyframes shine{ 0%{left:-150%} 60%{left:130%} 100%{left:130%} }
+  </style>
+</head>
+<body>
+  <header class="container hero">
+    <div class="hero-card shine">
+	  <div class="profile-pic">
+        <img src="Profile.png" alt="Abdul Rahman" />
+      </div>
+      <div class="kicker">Data Analytics • BI • Insights</div>
+      <h1>Abdul Rahman</h1>
+      <p class="subtitle">Data Analyst turning raw data into decision‑ready insights using <b>Python</b>, <b>SQL</b>, and <b>Power BI/Tableau</b>. I love building clean dashboards and automations that move KPIs in the right direction.</p>
+      <div class="badges">
+        <span class="badge">Python (Pandas • NumPy)</span>
+        <span class="badge">SQL (MySQL • Postgres)</span>
+        <span class="badge">Power BI • DAX</span>
+        <span class="badge">Tableau</span>
+        <span class="badge">Excel • VBA</span>
+        <span class="badge">ETL • APIs</span>
+        <span class="badge">A/B • Statistics</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects">📊 View Projects</a>
+        <a class="btn btn-ghost" href="#contact">✉️ Contact</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="info">
+        <ul>
+          <li><strong>Location:</strong> Dubai, UAE</li>
+          <li><strong>Email:</strong> <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+971545562285">+971 54 556 2285</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/Rahman17309" target="_blank" rel="noopener">github.com/Rahman17309</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rahman17309" target="_blank" rel="noopener">linkedin.com/in/rahman17309</a></li>
+          <li><strong>Medium:</strong> <a href="https://medium.com/@abdulrahman17309" target="_blank" rel="noopener">@abdulrahman17309</a></li>
+        </ul>
+      </div>
+      <div class="info" style="display:grid;gap:8px;">
+        <div class="metric"><span class="muted">Dashboards Launched</span><b>25+</b></div>
+        <div class="metric"><span class="muted">Data Pipelines Built</span><b>15+</b></div>
+        <div class="metric"><span class="muted">Stakeholder Teams Served</span><b>10+</b></div>
+      </div>
+    </aside>
+  </header>
+
+  <main class="container">
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p class="lead">I specialize in <b>exploratory analysis</b>, <b>BI dashboarding</b>, and <b>automation</b>. My work focuses on marketing & sales analytics, cohort behavior, and operational KPIs. I enjoy translating business questions into clean datasets, then into visuals everyone understands.</p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card proj span-6">
+          <h3>Sales Performance Dashboard (Power BI)</h3>
+          <p>Built a refreshable model with DAX measures to track revenue, conversion, and CAC by channel and region. Cut report prep time by 80%.</p>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Data Modeling</span>
+          </div>
+        </article>
+        <article class="card proj span-6">
+          <h3>Customer Churn Analysis (Python)</h3>
+          <p>Feature‑engineered churn drivers, ran cohort and survival analysis, and delivered a segmented retention playbook to CX leadership.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Cohorts</span>
+          </div>
+        </article>
+        <article class="card proj span-6">
+          <h3>Marketing Attribution (SQL + DBT)</h3>
+          <p>Designed multi‑touch attribution in SQL with scheduled transforms; unified spend and events to expose ROI by campaign.</p>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">DBT</span>
+            <span class="tag">ETL</span>
+          </div>
+        </article>
+        <article class="card proj span-6">
+          <h3>Inventory Forecasting (Excel + Python)</h3>
+          <p>Combined seasonal decomposition with lightweight ML to predict stock‑outs and optimize reorder levels for 300+ SKUs.</p>
+          <div class="tags">
+            <span class="tag">Excel</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+      </div>
+      <div class="cta-row" style="margin-top:14px">
+        <a class="btn btn-ghost" href="https://github.com/Rahman17309" target="_blank" rel="noopener">🔗 See more on GitHub</a>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card span-4"><b>Languages</b><br><span class="muted">Python, SQL, DAX</span></div>
+        <div class="card span-4"><b>Libraries</b><br><span class="muted">Pandas, NumPy, Matplotlib</span></div>
+        <div class="card span-4"><b>BI & Viz</b><br><span class="muted">Power BI, Tableau</span></div>
+        <div class="card span-4"><b>Databases</b><br><span class="muted">MySQL, PostgreSQL</span></div>
+        <div class="card span-4"><b>Tools</b><br><span class="muted">Excel, Git, DBT</span></div>
+        <div class="card span-4"><b>Concepts</b><br><span class="muted">ETL, Modeling, A/B, KPIs</span></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card span-6">
+          <p><b>Based in:</b> Dubai, UAE</p>
+          <p><b>Email:</b> <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a></p>
+          <p><b>Phone:</b> <a href="tel:+971545562285">+971 54 556 2285</a></p>
+          <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/rahman17309" target="_blank" rel="noopener">linkedin.com/in/rahman17309</a></p>
+          <p><b>GitHub:</b> <a href="https://github.com/Rahman17309" target="_blank" rel="noopener">github.com/Rahman17309</a></p>
+          <p><b>Medium:</b> <a href="https://medium.com/@abdulrahman17309" target="_blank" rel="noopener">medium.com/@abdulrahman17309</a></p>
+        </div>
+        <div class="card span-6">
+          <p class="lead">Ready to collaborate on analytics, dashboards, or automation. I reply within 24 hours.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:rahmandatascience09@gmail.com?subject=Inquiry%20from%20Portfolio">✉️ Email Me</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/rahman17309" target="_blank" rel="noopener">👋 Connect on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Abdul Rahman • Data Analytics • Dubai, UAE</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
