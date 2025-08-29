@@ -1,225 +1,145 @@
 <!DOCTYPE html>
+
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    {% include head-custom.html %}
-    
-    <style>
-      /* --- Previous styles from last time --- */
-      body { animation: fadeIn 1s ease-in-out; }
-      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      .personal-details ul { list-style-type: none; padding-left: 0; }
-      .personal-details li { margin-bottom: 10px; display: flex; align-items: center; }
-      .personal-details .icon { margin-right: 12px; width: 20px; text-align: center; color: #333; }
-      .btn { display: block; text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; color: #fff; background-color: #333; text-decoration: none; padding: 10px 15px; border: 2px solid #333; border-radius: 5px; max-width: 200px; margin: 20px auto; transition: all 0.3s ease-in-out; }
-      .btn:hover { background-color: #fff; color: #333; transform: scale(1.05); cursor: pointer; }
-      .typing-cursor { display: inline-block; width: 8px; height: 1.2em; background-color: black; animation: blink 0.7s infinite; margin-left: 2px; }
-      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  <head>
 
-      /* --- ✨ NEW Card layout styles ✨ --- */
-      .section-title {
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        font-size: 2em;
-        font-weight: bold;
-        color: #333;
-      }
+    <meta charset="UTF-8">
 
-      .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px; /* Space between cards */
-        padding: 10px;
-      }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-      .card {
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        padding: 25px;
-        flex: 1 1 300px; /* Flex properties for responsive sizing */
-        max-width: 350px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-left: 5px solid #007bff; /* Accent color border */
-      }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      .card:hover {
-        transform: translateY(-8px); /* Lifts the card on hover */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      }
 
-      .card h3 {
-        margin-top: 0;
-        color: #007bff;
-      }
 
-      .card .tags {
-        padding: 0;
-        margin: 15px 0;
-        list-style: none;
-      }
+    {% seo %}
 
-      .card .tags li {
-        display: inline-block;
-        background: #e9ecef;
-        color: #495057;
-        padding: 4px 10px;
-        border-radius: 15px;
-        font-size: 0.8em;
-        margin-right: 5px;
-        margin-bottom: 5px;
-      }
-      
-      .card a {
-        font-weight: bold;
-        text-decoration: none;
-        color: #007bff;
-      }
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
-      /* --- ✨ NEW Skill bar graph styles ✨ --- */
-      .skill {
-        margin-bottom: 15px;
-      }
-      .skill p {
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      .skill-bar-container {
-        width: 100%;
-        background-color: #e0e0e0;
-        border-radius: 20px;
-        height: 20px;
-      }
-      .skill-bar {
-        height: 100%;
-        text-align: right;
-        padding-right: 10px;
-        line-height: 20px;
-        color: white;
-        border-radius: 20px;
-        background-color: #007bff;
-        animation: fill-bar 2s ease-in-out;
-        box-sizing: border-box; /* Ensures padding doesn't affect width */
-      }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
 
-      @keyframes fill-bar {
-        from { width: 0%; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% if site.logo %}
-          <img src="{{ site.logo | relative_url }}" alt="Logo" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;"/>
-        {% endif %}
-        <p style="font-weight: bold; text-align: center; height: 1.5em;">
-            <span id="tagline"></span><span class="typing-cursor"></span>
-        </p>
-        <div class="personal-details">
-          <h2>Personal Details</h2>
-          <ul>
-            <li><i class="fas fa-map-marker-alt icon"></i><span>Dubai, UAE</span></li>
-            <li><i class="fas fa-envelope icon"></i><a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09</a></li>
-            <li><i class="fas fa-phone icon"></i><span>+9710545562285</span></li>
-            <li><i class="fab fa-github icon"></i><a href="https://github.com/Rahman17309" target="_blank">GitHub Profile</a></li>
-            <li><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn Profile</a></li>
-            <li><i class="fab fa-medium icon"></i><a href="https://medium.com/@abdulrahman17309" target="_blank">Medium</a></li>
-          </ul>
-          <h3>
-            <a href="{{ site.github.repository_url }}/raw/main/Resume/MA%20Rahman.pdf" download="MA_Rahman.pdf" class="btn">Download CV</a>
-          </h3>
-        </div>
-      </header>
+    <!--[if lt IE 9]>
 
-      <section>
-        {{ content }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 
-        <h2 class="section-title">Projects</h2>
-        <div class="card-container">
-          
-          <div class="card">
-            <h3>Customer Churn Prediction</h3>
-            <p>Developed a model to predict customer churn using logistic regression and random forests, achieving an accuracy of 85%.</p>
-            <ul class="tags">
-              <li>Python</li><li>Scikit-learn</li><li>Pandas</li>
-            </ul>
-            <a href="https://github.com/your-username/your-repo" target="_blank">View on GitHub &rarr;</a>
-          </div>
+    <![endif]-->
 
-          <div class="card">
-            <h3>Sales Forecasting Model</h3>
-            <p>Built a time-series model to forecast future sales data for a retail company, improving inventory management.</p>
-            <ul class="tags">
-              <li>Python</li><li>Statsmodels</li><li>Prophet</li>
-            </ul>
-            <a href="https://github.com/your-username/your-repo" target="_blank">View on GitHub &rarr;</a>
-          </div>
+    {% include head-custom.html %}
 
-          <div class="card">
-            <h3>Another Awesome Project</h3>
-            <p>A brief description of another one of your amazing data science projects goes here.</p>
-            <ul class="tags">
-              <li>Technology</li><li>Another Tech</li>
-            </ul>
-            <a href="https://github.com/your-username/your-repo" target="_blank">View on GitHub &rarr;</a>
-          </div>
-        </div>
+    <style>
 
-        <h2 class="section-title">Skills</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="skill">
-                    <p>Python (Pandas, NumPy, Scikit-learn)</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" style="width: 90%;">90%</div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>SQL & Databases</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" style="width: 85%;">85%</div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>Machine Learning (TensorFlow, PyTorch)</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" style="width: 80%;">80%</div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>Data Visualization (Tableau, Matplotlib)</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" style="width: 88%;">88%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      .personal-details {
 
-      </section>
+        max-width: 300px; /* Limit width for personal details */
 
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const taglineEl = document.getElementById('tagline');
-        const text = "{{ site.description | default: 'Data Scientist' }}";
-        let index = 0;
-        function type() { if (index < text.length) { taglineEl.innerHTML += text.charAt(index); index++; setTimeout(type, 150); } }
-        type();
-      });
-    </script>
-  </body>
+        margin: 0 auto; /* Center the personal details */
+
+      }
+
+      
+
+      .btn {
+
+        display: block; /* Makes the button a block element */
+
+        text-align: center; /* Centers the text inside the button */
+
+        font-family: 'Times New Roman', Times, serif;
+
+        font-weight: bold;
+
+        color: black;
+
+        text-decoration: none;
+
+        padding: 8px 12px; /* Reduced padding to make the button smaller */
+
+        border: 2px solid black;
+
+        max-width: 250px; /* Reduced max-width */
+
+        margin: 15px auto; /* Centers the button and adds space around it */
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <header>
+
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+
+
+        {% if site.logo %}
+
+          <img src="{{ site.logo | relative_url }}" alt="Logo" />
+
+        {% endif %}
+
+        
+
+        <p style="font-weight: bold; text-align: center;">{{ site.description | default: site.github.project_tagline }}</p>
+
+        
+
+        <div class="personal-details">
+
+          <h2>Personal Details</h2>
+
+          <ul>
+
+            <li><strong>Location:</strong> Dubai, UAE</li>
+
+            <li><strong>Email:</strong> <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09</a></li>
+
+            <li><strong>Phone:</strong> +9710545562285</li>
+
+            <li><strong>GitHub:</strong> <a href="https://github.com/Rahman17309" target="_blank">GitHub Profile</a></li>
+
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn Profile</a></li>
+
+            <li><strong>Medium:</strong> <a href="https://medium.com/@abdulrahman17309" target="_blank">Medium</a></li>
+
+          </ul>
+
+          
+
+          <h3>
+
+            <a href="{{ site.github.repository_url }}/raw/main/Resume/MA%20Rahman.pdf" download="MA_Rahman.pdf" class="btn">Download CV</a>
+
+          </h3>
+
+        </div>
+
+      </header>
+
+
+
+      <section>
+
+        {{ content }}
+
+      </section>
+
+
+
+      <footer>
+
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+
+    </div>
+
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+  </body>
+
 </html>
