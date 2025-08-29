@@ -8,18 +8,20 @@
 
   {% seo %}
   <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
   <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
   {% include head-custom.html %}
 
   <style>
+    /* keep your existing layout; only add minimal styles */
     .personal-details {
       max-width: 300px;
       margin: 0 auto;
     }
 
+    /* Animated download button */
     .btn {
       display: block;
       text-align: center;
@@ -33,26 +35,18 @@
       margin: 15px auto;
       border-radius: 6px;
       transition: all 0.3s ease-in-out;
+      will-change: transform;
     }
-
     .btn:hover {
       background: black;
       color: white;
-      transform: translateY(-3px) scale(1.05); /* lift & zoom */
-      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.25);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     }
 
-    footer {
-      clear: both;
-      width: 100%;
-      text-align: center;
-      padding: 15px 0;
-      border-top: 1px solid #eaeaea;
-      margin-top: 40px;
-    }
-
-    footer small {
-      color: #555;
+    /* Hide theme credit text but keep original DOM so layout stays identical */
+    .theme-credit {
+      display: none; /* preserves layout behavior while removing text */
     }
   </style>
 </head>
@@ -72,7 +66,7 @@
         <h2>Personal Details</h2>
         <ul>
           <li><strong>Location:</strong> Dubai, UAE</li>
-          <li><strong>Email:</strong> <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09</a></li>
+          <li><strong>Email:</strong> <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a></li>
           <li><strong>Phone:</strong> +971545562285</li>
           <li><strong>GitHub:</strong> <a href="https://github.com/Rahman17309" target="_blank">GitHub Profile</a></li>
           <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn Profile</a></li>
@@ -91,8 +85,14 @@
       {{ content }}
     </section>
 
+    <!-- Keep original footer markup so theme layout (fixed left / scrollable right) remains unchanged -->
     <footer>
-      <p><small>&copy; 2025 MA Rahman</small></p>
+      <p>
+        <small>
+          <span class="theme-credit">Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></span>
+          <span>&copy; 2025 MA Rahman</span>
+        </small>
+      </p>
     </footer>
   </div>
 
