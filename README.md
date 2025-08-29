@@ -1,6 +1,6 @@
 # M A Rahman
 
-*Aspiring data scientist with a strong foundation in statistical analysis, machine learning, and data visualization. Proficient in Python and SQL, with hands-on experience in developing predictive models, conducting EDA, and deploying machine learning solutions. I possess strong problem-solving abilities and a passion for continuous learning and professional growth.*
+*Experienced Business & Data Analyst with 3 years of expertise, including 1 year in Dubai, specializing in machine learning, statistical analysis, and workflow automation. Proficient in Python, SQL, and Power BI for building dashboards, tracking KPIs, and CRM analytics. Strong in predictive modeling and uncovering data-driven insights. Skilled at optimizing processes and collaborating cross-functionally to deliver impactful solutions that improve operations, guide strategy, and drive business performance.*
 
 
 # Education
@@ -23,43 +23,53 @@ GPA: 75.58/100 | Graduation: May 2019
 
 # Skills:
 
-* Programming Languages: Python, R, SQL
-* Packages: Scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Tableau
-* Databases: PostgreSQL, MySQL, ETL
+* Programming Languages: Python, SQL
+* Packages: Scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, Plotly
+* Databases: PostgreSQL, MySQL, ETL, Google Big Query
+* Visualization: Tableau, Power BI, Looker Studio
 * Frameworks: Streamlit, Flask, RESTful API
 * DevOps: Git, GitHub, Azure
 
 # Industry Experience
-## [Data Science Intern | Ai Variant | Hyderabad, India](https://www.linkedin.com/company/ai-variant/mycompany/)
-### Feb 2024 - Present
+## [Data Analyst | PDAinfotech | Dubai, UAE](https://pdainformationtechnology.com/)
+### Nov 2024 - Present
 
-**Advanced Data Science Applications:** Leading the development of innovative data science solutions, focusing on real-time predictive modeling and advanced machine learning algorithms.
+**Churn & CLV Modeling:** Led the design and deployment of churn prediction, customer lifetime value (CLV), and customer segmentation models for a retail client, improving retention by 18% and generating AED 150K in additional quarterly revenue.
 
-**Cross-functional Collaboration:** Collaborating with data engineers and business stakeholders to deploy models into production, optimizing business processes and driving data-driven decision-making.
+**Conversion Optimization:** Developed and implemented trial-to-paid conversion and churn prediction models for PDAinfotech’s SaaS platform, boosting conversion rates by 25% and reducing churn by 12%.
 
-**Model Optimization:** Implementing hyperparameter tuning and model evaluation techniques, leading to a 15% improvement in model accuracy across various projects.
+**Automated Reporting:** Automated end-to-end reporting pipelines using SQL, Python, and Google Sheets, reducing manual reporting effort by 60% and delivering real-time business insights.
+
+**Dashboard Development:** Built and maintained interactive dashboards in Power BI to track KPIs across sales, marketing, and customer success, enhancing data-driven decision-making.
+
+**Executive Reporting:** Reported directly to the C-suite team on daily, weekly, and monthly metrics, providing strategic insights that guided business planning and operational improvements.
+
+**Cross-functional Collaboration:** Partnered with teams across sales, marketing, and product to translate analytics into actionable strategies, optimizing campaigns, targeting, and adoption.
+
+**Data Governance:** Improved data quality and governance by designing validation frameworks and standardizing datasets, increasing reporting accuracy and reliability by 30%.
+
+**Experimentation & Insights:** Conducted A/B testing and campaign analytics for marketing and product initiatives, enabling data-driven optimization and measurable performance improvements.
+
+## [Data Science Intern | Ai Variant | Hyderabad, India](https://www.linkedin.com/company/ai-variant/mycompany/) 
+### June 2023 - Aug 2024
+
+**Advanced Data Science Applications:** Leading the development of innovative data science solutions, focusing on real-time predictive modeling and advanced machine learning algorithms. 
+
+**Cross-functional Collaboration:** Collaborating with data engineers and business stakeholders to deploy models into production, optimizing business processes and driving data-driven decision-making. 
+
+**Model Optimization:** Implementing hyperparameter tuning and model evaluation techniques, leading to a 15% improvement in model accuracy across various projects. 
 
 **Scalable Solutions:** Contributing to the design and deployment of scalable machine learning pipelines using cloud platforms, ensuring robust and efficient data processing.
 
-## [Data Science Intern | ExcleR Solutions | Hyderabad, India](https://www.linkedin.com/company/excelrsolutions/posts/?feedView=all)
-### Feb 2023 - Dec 2023
-
-**Comprehensive Training:** Completed an extensive program in statistical analysis, machine learning, deep learning, data visualization, and big data technologies.
-
 **Capstone Projects:** Developed and presented multiple projects, including predictive modeling, time series analysis, and natural language processing applications.
 
-**Practical Experience:** Gained hands-on experience in data preprocessing, feature engineering, model building, and performance evaluation, leading to successful completion of data-driven projects with measurable business impact.
 
-**High Distinction:** Graduated with high distinction, recognized for consistently delivering high-quality work and demonstrating exceptional understanding and application of data science concepts.
-
-**Peer Collaboration:** Collaborated with peers on group projects, enhancing teamwork and communication skills in a professional setting.
-
-**Industry-Relevant Skills:** Acquired skills in machine learning algorithms, data wrangling, and data visualization tools, preparing for real-world data science challenges.
-
-## Catalog Specialist | Amazon | Hyderabad, India
+## Bussiness Specialist | Amazon | Hyderabad, India
 ### May 2022 - May 2023	
 
 **Process Automation:** Spearheaded the design and implementation of Excel macros, automating seller support and daily operations. Achieved a 25% increase in process efficiency, significantly reducing manual workload.
+
+**Documentation & SOPs:** Developed and documented the SOP for the transparency project, enabling smooth knowledge transfer and standardized workflows.
 
 **Data Management:** Leveraged Hubble Query Language and ETL processes to extract, transform, and load data, optimizing data flow and enhancing catalog management accuracy.
 
@@ -125,7 +135,6 @@ GPA: 75.58/100 | Graduation: May 2019
 
   **IDE & Tools:** Jupyter Notebook, Colab Notebook, VSCode, PyCharm
 
-  **Collaboration Tools:** Slack, Zoom, Microsoft Teams
 
 # Additional Experience
 
