@@ -1,79 +1,78 @@
 # M A RAHMAN
 ## DATA & BUSINESS ANALYST 
-**Specializing in Predictive Modeling, Workflow Automation, and Strategic Intelligence**
+**Predictive Modeling | Workflow Automation | Strategic Intelligence**
 
 ---
 
-### 📊 FEATURED IMPACT METRICS
-| Metric | Achievement | Role |
+###  FEATURED IMPACT METRICS
+| Key Performance Indicator | Achievement | Business Unit |
 | :--- | :--- | :--- |
-| **Conversion Rate** | [cite_start]25% Boost in Trial-to-Paid Conversion [cite: 15] | PDA Infotech |
-| **Operational Efficiency** | [cite_start]60% Reduction in Manual Reporting [cite: 18] | PDA Infotech |
-| **Forecasting Accuracy** | [cite_start]85% Accuracy in Market Trend Predictions [cite: 29] | AI Variant |
-| **Revenue Generation** | [cite_start]AED 150K Generated in Quarterly Revenue [cite: 15] | PDA Infotech |
-| **Risk Mitigation** | [cite_start]18% Reduction in Financial False Positives [cite: 32] | AI Variant |
+| **Conversion Optimization** | 25% Increase in Trial-to-Paid Conversion | PDA Infotech |
+| **Operational Efficiency** | 60% Reduction in Manual Reporting Effort | PDA Infotech |
+| **Forecasting Precision** | 85% Accuracy in Stock Trend Predictions | AI Variant |
+| **Resource Optimization** | 12% Reduction in Grid Management Costs | AI Variant |
+| **Risk Reduction** | 18% Decrease in Financial False Positives | AI Variant |
 
 ---
 
-### 🚀 PROFESSIONAL EXPERIENCE (EXTENDED)
+###  PROFESSIONAL EXPERIENCE
 
 #### **DATA ANALYST | PDA INFOTECH**
-*Dubai, UAE | [cite_start]Nov 2024 – Present [cite: 41]*
+*Dubai, UAE | Nov 2024 – Present*
 
-**Strategic Predictive Analytics**
-* [cite_start]Designed and deployed end-to-end predictive machine learning models focusing on Churn, CLV, and Customer Segmentation for high-growth SaaS and Retail clients[cite: 15].
-* [cite_start]Successfully improved customer retention by 18% through the implementation of targeted behavior-based interventions[cite: 15].
-* [cite_start]Orchestrated statistical A/B testing and validation frameworks to maintain data storytelling consistency across local and global business units[cite: 22].
-
-**Business Intelligence Architecture**
-* [cite_start]Developed comprehensive Power BI data models (DAX, Power Query) providing KPI-driven insights for Sales, Marketing, and Customer Success[cite: 16].
-* [cite_start]Built automated ETL pipelines utilizing Google BigQuery and Python, enhancing data governance and reducing reporting effort by 60%[cite: 18].
-* [cite_start]Presented strategic financial models and performance forecasting directly to the C-suite, directly influencing quarterly strategy and long-term budgeting[cite: 19].
+* **Predictive Analytics Deployment:** Engineered and deployed machine learning frameworks for Churn, CLV, and Segmentation, directly generating **AED 150K in quarterly revenue** and improving retention by 18%.
+* **BI Infrastructure:** Architected high-performance Power BI data models using DAX and Power Query to deliver KPI-driven insights for C-suite and board-level reporting.
+* **ETL Engineering:** Automated complex data workflows via **Google BigQuery** and Python, enhancing data governance while slashing manual labor by 60%.
+* **Strategic Advisory:** Partnered with Finance and Product teams to translate complex analytics into actionable ROI-improving strategies and long-term budgeting.
 
 #### **DATA SCIENCE INTERN | AI VARIANT**
-*Hyderabad, India | [cite_start]Jun 2023 – Aug 2024 [cite: 42]*
+*Hyderabad, India | Jun 2023 – Aug 2024*
 
-**Financial & Energy Analytics**
-* [cite_start]Collaborated with BlackRock to develop time-series forecasting frameworks (LSTM, ARIMA, Prophet) for NSE and foreign markets, achieving a 15% reduction in RMSE[cite: 28, 29].
-* [cite_start]Engineered an 88% accurate predictive model for solar power generation at Cygni Energy, optimizing resource allocation and cutting operational costs by 6%[cite: 30, 31].
-* [cite_start]Developed a bankruptcy prevention system using ensemble learning (Random Forest, Gradient Boosting) that improved classification accuracy by 22%[cite: 32].
-
-**Automation & Intelligence**
-* [cite_start]Built automated web-scraping tools using Selenium to collect real-time customer feedback, increasing sentiment classification accuracy by 10%[cite: 24, 26].
-* [cite_start]Established critical KPIs for management to enable actionable execution plans based on market trends[cite: 27].
+* **Market Intelligence:** Collaborated with **BlackRock** to build LSTM, ARIMA, and Prophet forecasting models for international markets, achieving a 15% reduction in RMSE.
+* **Energy Analytics:** Developed an 88% accurate solar power prediction model for **Cygni Energy**, optimizing resource allocation and reducing operational costs by 6%.
+* **Automated Intelligence:** Designed Selenium-based web scraping tools for real-time sentiment analysis, improving classification accuracy by 10% through advanced feature engineering.
 
 #### **BUSINESS ANALYST | AMAZON**
-*Hyderabad, India | [cite_start]May 2022 – May 2023 [cite: 43]*
+*Hyderabad, India | May 2022 – May 2023*
 
-* [cite_start]Spearheaded Excel macro implementation for Seller Flex and Transparency projects, increasing process efficiency by 10%[cite: 35, 40].
-* [cite_start]Reduced daily operational workload by 15% through the automation of manual cataloging tasks[cite: 38, 40].
-* [cite_start]Leveraged Hubble Query Language and ETL processes to extract and transform high-volume datasets for catalog management accuracy[cite: 39].
-
----
-
-### 🛠 TECHNICAL STACK
-* [cite_start]**Languages & Core Tools:** Python, Power BI, Advanced Excel (VBA/Macros), SQL[cite: 55, 56].
-* [cite_start]**Machine Learning & NLP:** Scikit-learn, TensorFlow, Keras, NLTK, XGBoost[cite: 24, 63, 71].
-* [cite_start]**Data Visualization:** Pandas, NumPy, Matplotlib, Seaborn, Plotly[cite: 63].
-* [cite_start]**Database & Cloud:** Google BigQuery, PostgreSQL, MySQL, Hubble, Azure, AWS[cite: 65, 69].
+* **Process Automation:** Spearheaded Excel macro implementation for Seller Flex and daily operations, increasing process efficiency by 10–15%.
+* **Data Integrity:** Leveraged **Hubble Query Language** and ETL processes to enhance catalog management precision, data flow, and reporting reliability.
 
 ---
 
-### 📂 TECHNICAL PROJECTS (DETAILED)
+###  TECHNICAL PROJECT PORTFOLIO
 
-#### **[BANKRUPTCY PREVENTION SYSTEM](https://github.com/Rahman17309/Bankruptcy-Prevention-Project)**
-* **Problem:** Identifying financial distress in firms before failure.
-* **Solution:** Engineered an ensemble system using Logistic Regression and Random Forest.
-* [cite_start]**Impact:** Reduced false positives by 18%, saving potential millions in stakeholder losses[cite: 32, 33, 71].
+#### **1. BANKRUPTCY PREVENTION & RISK ASSESSMENT**
+* **Overview:** Engineered an ensemble system (Logistic Regression, Random Forest, Gradient Boosting) to identify financial distress in firms.
+* **Impact:** Reduced false positives by 18% and improved overall prediction accuracy by 22%.
+* **Links:** [GitHub Repository](https://github.com/Rahman17309/Bankruptcy-Prevention-Project) | [▶️ Watch Project Demo]([https://youtube.com](https://youtu.be/jHw8JbTdTC4))
 
-#### **[APPLE STOCK FORECASTING](https://github.com/Rahman17309/Apple-stock-forecasting-project-)**
-* **Problem:** High volatility in equity market prediction.
-* **Solution:** Integrated LSTM and Prophet models for time-series analysis.
-* [cite_start]**Impact:** Maintained 85% prediction accuracy for informed investment strategies[cite: 29, 71].
+#### **2. APPLE STOCK FORECASTING (TIME SERIES)**
+* **Overview:** Developed a high-precision framework using **LSTM and Prophet** to predict market trends and equity volatility.
+* **Impact:** Achieved a 15% RMSE reduction compared to baseline models with 85% prediction accuracy.
+* **Links:** [GitHub Repository](https://github.com/Rahman17309/Apple-stock-forecasting-project-) | [▶️ Watch Project Demo]([https://youtube.com](https://www.youtube.com/watch?v=r2wZKC7ocJk))
+
+#### **3. NLP SENTIMENT & CUSTOMER INTELLIGENCE**
+* **Overview:** Built end-to-end NLP pipelines using **NLTK and Selenium** to analyze and classify Amazon customer reviews.
+* **Impact:** Realized a 20% increase in sentiment classification accuracy for targeted marketing insights.
+* **Links:** [GitHub Repository](https://github.com/Rahman17309/NLP-Sentiment-Classification-Analysis) | [▶️ Watch Project Demo]([https://youtube.com](https://youtu.be/ChRp_Pf63jE?si=bx0eNHKJa2J4MfPl))
+
+#### **4. SOLAR POWER PREDICTION & DEPLOYMENT**
+* **Overview:** Created an ML solution using **XGBoost** to estimate solar energy output, deployed via a Streamlit dashboard.
+* **Impact:** Achieved 88% accuracy, contributing to a 12% reduction in operational grid management costs.
+* **Links:** [GitHub Repository](https://github.com/Rahman17309/Solar-Power-Prediction) | [▶️ Watch Project Demo]([https://youtube.com](https://youtu.be/sFNEGxjOMiI?si=l29N0xLx2-k_Cp5z))
 
 ---
 
-### 📜 EDUCATION & CERTIFICATIONS
-* **B. Tech in Mechanical Engineering** | JNTU Hyderabad | [cite_start]First Class[cite: 47, 48].
-* **Master’s Program in Data Science** | [cite_start]NASSCOM, Government of India[cite: 59].
-* **Machine Learning with Python** | [cite_start]IBM Developer Skills Network[cite: 51].
+###  ACADEMIC BACKGROUND
+* **B. Tech in Mechanical Engineering**
+* Jawaharlal Nehru Technological University (JNTU) Hyderabad
+* *Classification: First Class* | *2015 – 2019*
+
+---
+
+###  PROFESSIONAL CERTIFICATIONS
+* **Master’s Program in Data Science** | NASSCOM, Government of India
+* **Data Science Certification** | ExcleR Solutions
+* **Machine Learning with Python** | IBM Developer Skills Network
+* **Python 101 for Data Science** | IBM Developer Skills Network
