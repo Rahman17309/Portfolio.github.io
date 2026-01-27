@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <style>
@@ -14,117 +25,41 @@
             --border: #30363d;
         }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-dim);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
+        body { background-color: var(--bg-dark); color: var(--text-dim); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.7; }
+        .wrapper { display: flex; max-width: 1440px; margin: 0 auto; }
 
-        .wrapper {
-            display: flex;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Fixed Professional Sidebar */
         header {
-            width: 320px;
-            background-color: var(--sidebar-bg);
-            padding: 50px 30px;
-            border-right: 1px solid var(--border);
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            width: 330px; background-color: var(--sidebar-bg); padding: 50px 30px;
+            border-right: 1px solid var(--border); height: 100vh; position: sticky;
+            top: 0; display: flex; flex-direction: column; align-items: center; box-sizing: border-box;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%; /* Perfect Circle */
-            border: 3px solid var(--accent-blue);
-            object-fit: cover;
-            margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(173, 216, 230, 0.2);
+            width: 160px; height: 160px; border-radius: 50%; border: 3px solid var(--accent-blue);
+            object-fit: cover; margin-bottom: 25px; box-shadow: 0 0 20px rgba(173, 216, 230, 0.2);
         }
 
-        /* Shining Text Effect */
-        h1, h2, h3 {
-            color: var(--accent-blue) !important;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, #add8e6, #fff, #add8e6);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
-        }
+        h1 { font-size: 1.6rem; color: var(--accent-blue) !important; text-align: center; }
+        
+        .nav-item { margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 10px; width: 100%; }
+        .label { display: block; color: #8b949e; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        @keyframes shine { to { background-position: 200% center; } }
-
-        .sidebar-info {
-            width: 100%;
-            margin-top: 30px;
-            font-size: 0.85rem;
-        }
-
-        .info-label {
-            display: block;
-            color: #8b949e;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            margin-top: 15px;
-        }
-
-        /* Pulsing Download Button */
         .btn-cv {
-            display: block;
-            width: 100%;
-            margin-top: 35px;
-            padding: 12px;
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue) !important;
-            text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.8rem;
-            animation: pulse-glow 2s infinite;
+            display: block; width: 100%; padding: 14px; margin-top: 30px;
+            border: 1px solid var(--accent-blue); color: var(--accent-blue) !important;
+            text-decoration: none; text-align: center; font-weight: bold; font-size: 0.8rem;
+            animation: pulse 2s infinite; border-radius: 4px;
         }
 
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.4); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.3); }
             70% { box-shadow: 0 0 0 10px rgba(173, 216, 230, 0); }
             100% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0); }
         }
 
-        .btn-cv:hover {
-            background: var(--accent-blue);
-            color: var(--bg-dark) !important;
-        }
-
-        /* Main Section */
-        section {
-            flex: 1;
-            padding: 50px 70px;
-            background-color: var(--bg-dark);
-        }
-
-        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
-        th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
-        th { background: #161b22; color: var(--accent-blue); }
-
-        /* YouTube Link Styling */
-        a[href*="youtube"] {
-            color: #ff4d4d;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
+        section { flex: 1; padding: 60px 80px; max-width: 900px; }
+        h2, h3 { color: var(--accent-blue); border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        
         @media (max-width: 1000px) {
             .wrapper { flex-direction: column; }
             header { width: 100%; height: auto; position: relative; border-right: none; }
@@ -135,20 +70,26 @@
 <body>
     <div class="wrapper">
         <header>
-            <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" alt="M.A. Rahman" class="profile-img">
-            <h1>M.A. RAHMAN</h1>
+            <img src="{{ site.logo }}" alt="Profile" class="profile-img">
+            <h1>{{ site.title }}</h1>
+            <p style="font-size: 0.8rem; color: #8b949e; text-align: center;">{{ site.tagline }}</p>
             
-            <div class="sidebar-info">
-                <span class="info-label">Current Location</span> Dubai, UAE
-                <span class="info-label">Email</span> rahmandatascience09@gmail.com
-                <span class="info-label">Professional Hubs</span>
-                <a href="https://linkedin.com/in/rahman17309" style="color:var(--accent-blue);">LinkedIn</a> / 
-                <a href="https://github.com/Rahman17309" style="color:var(--accent-blue);">GitHub</a>
+            <div style="width:100%;">
+                <div class="nav-item">
+                    <span class="label">Location</span> {{ site.location }}
+                </div>
+                <div class="nav-item">
+                    <span class="label">Email</span>
+                    <a href="mailto:{{ site.email }}" style="color:white; text-decoration:none;">{{ site.email }}</a>
+                </div>
+                <div class="nav-item">
+                    <span class="label">Networks</span>
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" style="color:var(--accent-blue);">LinkedIn</a> / 
+                    <a href="https://github.com/{{ site.github_username }}" style="color:var(--accent-blue);">GitHub</a>
+                </div>
             </div>
 
-            <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" download class="btn-cv">
-                DOWNLOAD EXTENDED CV
-            </a>
+            <a href="{{ site.cv_url }}" download class="btn-cv">DOWNLOAD EXTENDED CV</a>
         </header>
 
         <section>
