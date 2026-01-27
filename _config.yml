@@ -3,10 +3,13 @@ tagline: "Senior Data & Business Analyst"
 description: "Specializing in Predictive Modeling, Workflow Automation, and Strategic Intelligence."
 remote_theme: jekyll/minimal
 
-# Profile Settings
+# Profile Settings (Corrected Raw Links)
 logo: "https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png"
 location: "Dubai, United Arab Emirates"
 email: "rahmandatascience09@gmail.com"
+
+# Analytics (Replace with your actual G-ID later)
+google_analytics: "G-XXXXXXXXXX" 
 
 # Social Links
 linkedin_username: "rahman17309"
