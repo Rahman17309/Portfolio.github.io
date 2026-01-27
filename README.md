@@ -45,7 +45,7 @@
 #### **1. BANKRUPTCY PREVENTION & RISK ASSESSMENT**
 * **Overview:** Engineered an ensemble system (Logistic Regression, Random Forest, Gradient Boosting) to identify financial distress in firms.
 * **Impact:** Reduced false positives by 18% and improved overall prediction accuracy by 22%.
-* **Links:** [GitHub Repository](https://github.com/Rahman17309/Bankruptcy-Prevention-Project) | [▶️ Watch Project Demo]([https://youtube.com](https://youtu.be/jHw8JbTdTC4))
+* **Links:** [GitHub Repository](https://github.com/Rahman17309/Bankruptcy-Prevention-Project) | [▶️ Watch Project Demo]([https://youtu.be/jHw8JbTdTC4])
 
 #### **2. APPLE STOCK FORECASTING (TIME SERIES)**
 * **Overview:** Developed a high-precision framework using **LSTM and Prophet** to predict market trends and equity volatility.
