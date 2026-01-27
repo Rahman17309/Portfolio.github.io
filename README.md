@@ -1,4 +1,4 @@
-# 👋 Hi, I’m **M A Rahman**
+# **M A Rahman**
 ### **Data Analyst | Business Analyst | Predictive Analytics**
 
 📍 **Dubai, UAE**  
@@ -6,7 +6,6 @@
 🔗 **Links:**  
 - [LinkedIn](https://www.linkedin.com/in/rahman17309/)  
 - [GitHub](https://github.com/Rahman17309)  
-- Portfolio (Coming Soon)
 
 ---
 
