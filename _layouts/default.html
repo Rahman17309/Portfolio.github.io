@@ -14,21 +14,44 @@
             --border: #30363d;
         }
 
+        /* --- BACKGROUND ANIMATION START --- */
         body {
-            background-color: var(--bg-dark);
             color: var(--text-dim);
             font-family: 'Segoe UI', Tahoma, sans-serif;
             margin: 0;
             line-height: 1.6;
+            /* Animated Gradient Background */
+            background: linear-gradient(-45deg, #0d1117, #161b22, #0a0d12, #1c2128);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            background-attachment: fixed;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Background Glows */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(173, 216, 230, 0.05), transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* --- BACKGROUND ANIMATION END --- */
 
         .wrapper {
             display: flex;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Fixed Professional Sidebar */
         header {
             width: 320px;
             background-color: var(--sidebar-bg);
@@ -41,19 +64,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            /* Added shadow to separate from animated bg */
+            box-shadow: 10px 0 30px rgba(0,0,0,0.5);
         }
 
         .profile-img {
             width: 160px;
             height: 160px;
-            border-radius: 50%; /* Perfect Circle */
+            border-radius: 50%;
             border: 3px solid var(--accent-blue);
             object-fit: cover;
             margin-bottom: 25px;
             box-shadow: 0 0 15px rgba(173, 216, 230, 0.2);
         }
 
-        /* Shining Text Effect */
         h1, h2, h3 {
             color: var(--accent-blue) !important;
             text-transform: uppercase;
@@ -81,7 +105,6 @@
             margin-top: 15px;
         }
 
-        /* Pulsing Download Button */
         .btn-cv {
             display: block;
             width: 100%;
@@ -107,18 +130,18 @@
             color: var(--bg-dark) !important;
         }
 
-        /* Main Section */
         section {
             flex: 1;
             padding: 50px 70px;
-            background-color: var(--bg-dark);
+            /* Made semi-transparent so animation peaks through slightly */
+            background-color: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(5px);
         }
 
         table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
         th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
         th { background: #161b22; color: var(--accent-blue); }
 
-        /* YouTube Link Styling */
         a[href*="youtube"] {
             color: #ff4d4d;
             font-weight: bold;
