@@ -6,9 +6,7 @@
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
 </head>
-<body>
-
-    <div id="loader-wrapper">
+<body class="loading"> <div id="loader-wrapper">
         <div class="pie-loader"></div>
         <p>Initializing Data Environment...</p>
     </div>
@@ -39,9 +37,11 @@
     <script>
         window.addEventListener("load", function() {
             const loader = document.getElementById("loader-wrapper");
-            // Loader stays for 2 seconds then fades
+            const body = document.body;
+            
             setTimeout(() => {
                 loader.classList.add("loader-hidden");
+                body.classList.remove("loading"); // This triggers the fade to black
             }, 2000); 
         });
     </script>
