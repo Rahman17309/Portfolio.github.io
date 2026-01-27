@@ -11,108 +11,135 @@
     {% include head-custom.html %}
 
     <style>
-      /* Dashboard Theme Overrides */
+      /* Base Dashboard Theme */
       body {
-        background-color: #121212; /* Deep Black/Grey */
-        color: #ffffff;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0f0f0f;
+        color: #e0e0e0;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        margin: 0;
       }
 
       .wrapper {
         display: flex;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 40px 20px;
       }
 
-      /* Headings in Light Blue */
-      h1, h2, h3, h4, h5, h6 {
-        color: #add8e6 !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      /* Circular Profile Image */
+      .profile-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%; /* Circle */
+        border: 2px solid #add8e6;
+        object-fit: cover;
+        margin-bottom: 25px;
+        box-shadow: 0 0 15px rgba(173, 216, 230, 0.2);
       }
 
-      a { color: #add8e6; text-decoration: none; }
-      a:hover { color: #ffffff; }
-
-      /* Sidebar (Header) Column */
+      /* Sidebar Navigation */
       header {
-        width: 300px;
+        width: 280px;
         flex-shrink: 0;
-        border-right: 1px solid #333;
-        padding-right: 30px;
-        margin-right: 40px;
+        padding-right: 40px;
+        border-right: 1px solid #222;
         position: sticky;
-        top: 20px;
+        top: 40px;
         height: fit-content;
       }
 
-      /* Main Content Column */
+      /* Main Content Area */
       section {
         flex-grow: 1;
-        width: 100%;
+        padding-left: 50px;
       }
 
-      /* Profile Image */
-      .profile-img {
-        width: 180px;
-        height: 180px;
-        border: 2px solid #add8e6;
-        border-radius: 4px; /* Professional square-round */
-        object-fit: cover;
-        margin-bottom: 20px;
+      /* SHINING HEADING ANIMATION */
+      h1, h2, h3 {
+        color: #add8e6 !important;
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(to right, #add8e6 20%, #fff 50%, #add8e6 80%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 4s linear infinite;
+        font-weight: 700;
+        letter-spacing: 1px;
       }
 
-      /* Personal Details List */
+      @keyframes shine {
+        to { background-position: 200% center; }
+      }
+
+      /* Professional Dashboard Details */
       .personal-details ul {
         list-style: none;
         padding: 0;
-        font-size: 0.9em;
+        margin-top: 30px;
       }
 
       .personal-details li {
-        margin-bottom: 12px;
-        border-bottom: 1px solid #222;
-        padding-bottom: 5px;
+        margin-bottom: 20px;
       }
 
       .detail-label {
         display: block;
-        font-size: 0.75em;
-        color: #888;
+        font-size: 10px;
+        color: #666;
         text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 4px;
       }
 
-      /* Professional CV Button */
+      .detail-value, .detail-value a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      /* ANIMATED DOWNLOAD BUTTON */
       .btn-cv {
         display: block;
         text-align: center;
         background: transparent;
         color: #add8e6 !important;
         border: 1px solid #add8e6;
-        padding: 12px;
-        margin-top: 25px;
+        padding: 14px;
+        margin-top: 30px;
         text-transform: uppercase;
+        font-size: 12px;
         font-weight: bold;
+        letter-spacing: 2px;
+        border-radius: 4px;
         transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        animation: pulse-border 2s infinite;
       }
 
       .btn-cv:hover {
         background: #add8e6;
-        color: #121212 !important;
+        color: #000 !important;
+        box-shadow: 0 0 20px rgba(173, 216, 230, 0.4);
       }
 
-      /* Responsive Fix */
-      @media (max-width: 900px) {
-        .wrapper { flex-direction: column; }
-        header { 
-          width: 100%; 
-          border-right: none; 
-          border-bottom: 1px solid #333;
-          margin-bottom: 30px;
-          padding-bottom: 30px;
-          position: relative;
-        }
+      @keyframes pulse-border {
+        0% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(173, 216, 230, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0); }
+      }
+
+      /* Links */
+      a { color: #add8e6; transition: 0.3s; }
+      a:hover { color: #fff; }
+
+      /* Mobile Responsive */
+      @media (max-width: 850px) {
+        .wrapper { flex-direction: column; align-items: center; }
+        header { width: 100%; border-right: none; padding: 0; text-align: center; border-bottom: 1px solid #222; margin-bottom: 40px; padding-bottom: 40px; }
+        section { padding-left: 0; width: 100%; }
+        .profile-img { margin: 0 auto 20px; }
       }
     </style>
   </head>
@@ -120,30 +147,28 @@
     <div class="wrapper">
       <header>
         <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" 
-             alt="M.A. Rahman" 
+             alt="Profile" 
              class="profile-img">
 
         <h1>{{ site.title | default: "M.A. Rahman" }}</h1>
-        <p style="color: #888;">{{ site.description | default: "Data Science Professional" }}</p>
+        <p style="color: #666; font-size: 14px;">Data Science Professional</p>
 
         <div class="personal-details">
           <ul>
             <li>
               <span class="detail-label">Location</span>
-              Dubai, UAE
+              <span class="detail-value">Dubai, UAE</span>
             </li>
             <li>
-              <span class="detail-label">Email</span>
-              <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a>
+              <span class="detail-label">Professional Email</span>
+              <span class="detail-value"><a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a></span>
             </li>
             <li>
-              <span class="detail-label">Phone</span>
-              +971 54 556 2285
-            </li>
-            <li>
-              <span class="detail-label">Networks</span>
-              <a href="https://github.com/Rahman17309" target="_blank">GitHub</a> | 
-              <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn</a>
+              <span class="detail-label">Connect</span>
+              <span class="detail-value">
+                <a href="https://github.com/Rahman17309" target="_blank">GitHub</a> / 
+                <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn</a>
+              </span>
             </li>
           </ul>
 
@@ -160,10 +185,8 @@
       </section>
     </div>
 
-    <footer>
-        <div style="max-width: 1200px; margin: 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #555;">
-            &copy; 2024 M.A. Rahman | Data Science Portfolio
-        </div>
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #222; font-size: 11px; color: #444; letter-spacing: 1px;">
+        &copy; 2026 M.A. RAHMAN &bull; DATA SCIENCE PORTFOLIO
     </footer>
 
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
