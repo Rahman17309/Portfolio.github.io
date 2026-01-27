@@ -6,9 +6,13 @@
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
 </head>
-<body class="loading"> <div id="loader-wrapper">
-        <div class="pie-loader"></div>
-        <p>Initializing Data Environment...</p>
+<body class="loading">
+
+    <div id="loader-wrapper">
+        <div id="data-stream"></div> <div class="loader-content">
+            <div class="pie-loader"></div>
+            <p id="loader-text">RUNNING DATA_MODEL.EXE...</p>
+        </div>
     </div>
 
     <div class="wrapper">
@@ -37,12 +41,43 @@
     <script>
         window.addEventListener("load", function() {
             const loader = document.getElementById("loader-wrapper");
+            const stream = document.getElementById("data-stream");
             const body = document.body;
-            
+
+            // List of Data Science metrics
+            const metrics = [
+                "Accuracy: 0.98", "Loss: 0.02", "LR: 0.001",
+                "Epoch: 64/100", "Optimizing...", "Tensors Loaded",
+                "GPU: 88%", "Cleaning...", "Seed: 17309", "SQL_QUERY_OK",
+                "Normalization...", "Layers: 12", "Relu_Active"
+            ];
+
+            // Spawn random pops every 150ms
+            const spawnData = setInterval(() => {
+                const el = document.createElement("div");
+                const isBar = Math.random() > 0.7;
+                
+                if(isBar) {
+                    el.className = "ghost-bar";
+                    el.style.left = Math.random() * 95 + "%";
+                    el.style.bottom = Math.random() * 30 + 35 + "%";
+                } else {
+                    el.className = "data-point";
+                    el.innerText = metrics[Math.floor(Math.random() * metrics.length)];
+                    el.style.left = Math.random() * 80 + 10 + "%";
+                    el.style.top = Math.random() * 70 + 15 + "%";
+                }
+                
+                stream.appendChild(el);
+                setTimeout(() => el.remove(), 1500);
+            }, 150);
+
+            // Exit Loader
             setTimeout(() => {
+                clearInterval(spawnData);
                 loader.classList.add("loader-hidden");
-                body.classList.remove("loading"); // This triggers the fade to black
-            }, 2000); 
+                body.classList.remove("loading");
+            }, 3500); 
         });
     </script>
 </body>
