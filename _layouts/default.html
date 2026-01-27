@@ -11,111 +11,160 @@
     {% include head-custom.html %}
 
     <style>
-      /* Fix for sidebar layout issues */
+      /* Dashboard Theme Overrides */
+      body {
+        background-color: #121212; /* Deep Black/Grey */
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .wrapper {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Headings in Light Blue */
+      h1, h2, h3, h4, h5, h6 {
+        color: #add8e6 !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      a { color: #add8e6; text-decoration: none; }
+      a:hover { color: #ffffff; }
+
+      /* Sidebar (Header) Column */
       header {
+        width: 300px;
+        flex-shrink: 0;
+        border-right: 1px solid #333;
+        padding-right: 30px;
+        margin-right: 40px;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+      }
+
+      /* Main Content Column */
+      section {
+        flex-grow: 1;
+        width: 100%;
+      }
+
+      /* Profile Image */
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        border: 2px solid #add8e6;
+        border-radius: 4px; /* Professional square-round */
+        object-fit: cover;
         margin-bottom: 20px;
       }
 
-      /* Profile Picture Adjustment */
-      .profile-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%; /* Makes it circular */
-        object-fit: cover;
-        display: block;
-        margin: 10px 0;
-        border: 3px solid #eee;
-      }
-
-      /* Personal details block - Cleaned up spacing */
-      .personal-details {
-        font-size: 0.9em;
-        margin-top: 20px;
-      }
-      
+      /* Personal Details List */
       .personal-details ul {
         list-style: none;
         padding: 0;
+        font-size: 0.9em;
       }
 
       .personal-details li {
-        margin-bottom: 8px;
-        word-wrap: break-word;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #222;
+        padding-bottom: 5px;
       }
 
-      /* Animated Download CV button */
+      .detail-label {
+        display: block;
+        font-size: 0.75em;
+        color: #888;
+        text-transform: uppercase;
+      }
+
+      /* Professional CV Button */
       .btn-cv {
-        display: inline-block;
+        display: block;
         text-align: center;
-        font-family: inherit;
+        background: transparent;
+        color: #add8e6 !important;
+        border: 1px solid #add8e6;
+        padding: 12px;
+        margin-top: 25px;
+        text-transform: uppercase;
         font-weight: bold;
-        color: #222 !important;
-        text-decoration: none;
-        padding: 8px 15px;
-        border: 2px solid #222;
-        border-radius: 6px;
-        transition: all 0.3s ease-in-out;
-        margin-top: 10px;
+        transition: 0.3s;
       }
 
       .btn-cv:hover {
-        background: #222;
-        color: #fff !important;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background: #add8e6;
+        color: #121212 !important;
       }
 
-      /* Ensure content doesn't overlap on small screens */
-      @media (max-width: 640px) {
-        header { float: none; width: 100%; }
-        .profile-img { margin: 0 auto; }
-        .personal-details { text-align: center; }
+      /* Responsive Fix */
+      @media (max-width: 900px) {
+        .wrapper { flex-direction: column; }
+        header { 
+          width: 100%; 
+          border-right: none; 
+          border-bottom: 1px solid #333;
+          margin-bottom: 30px;
+          padding-bottom: 30px;
+          position: relative;
+        }
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-
         <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" 
-             alt="Rahman Profile" 
+             alt="M.A. Rahman" 
              class="profile-img">
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <h1>{{ site.title | default: "M.A. Rahman" }}</h1>
+        <p style="color: #888;">{{ site.description | default: "Data Science Professional" }}</p>
 
         <div class="personal-details">
-          <strong>Contact Information</strong>
           <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Dubai, UAE</li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:rahmandatascience09@gmail.com">Email Me</a></li>
-            <li><i class="fas fa-phone"></i> +971 54 556 2285</li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/Rahman17309" target="_blank">GitHub</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn</a></li>
-            <li><i class="fab fa-medium"></i> <a href="https://medium.com/@abdulrahman17309" target="_blank">Medium</a></li>
+            <li>
+              <span class="detail-label">Location</span>
+              Dubai, UAE
+            </li>
+            <li>
+              <span class="detail-label">Email</span>
+              <a href="mailto:rahmandatascience09@gmail.com">rahmandatascience09@gmail.com</a>
+            </li>
+            <li>
+              <span class="detail-label">Phone</span>
+              +971 54 556 2285
+            </li>
+            <li>
+              <span class="detail-label">Networks</span>
+              <a href="https://github.com/Rahman17309" target="_blank">GitHub</a> | 
+              <a href="https://www.linkedin.com/in/rahman17309" target="_blank">LinkedIn</a>
+            </li>
           </ul>
 
-          <a href="{{ site.github.repository_url }}/raw/main/Resume/MA%20Rahman.pdf" download="MA_Rahman.pdf" class="btn-cv">
-            <i class="fas fa-download"></i> Download CV
+          <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" 
+             download="MA_Rahman_CV.pdf" 
+             class="btn-cv">
+            Download CV
           </a>
         </div>
-
-        {% if site.show_downloads %}
-          <ul class="downloads">
-            <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP</strong></a></li>
-            <li><a href="{{ site.github.repository_url }}">View <strong>GitHub</strong></a></li>
-          </ul>
-        {% endif %}
       </header>
 
       <section>
         {{ content }}
       </section>
-
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #555;">
+            &copy; 2024 M.A. Rahman | Data Science Portfolio
+        </div>
+    </footer>
 
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
