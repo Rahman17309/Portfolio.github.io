@@ -1,1 +1,138 @@
+/* --- Variables --- */
+:root {
+    --bg-dark: #0d1117;
+    --sidebar-bg: #161b22;
+    --accent-blue: #add8e6;
+    --text-dim: #c9d1d9;
+    --border: #30363d;
+}
 
+/* --- Body & Animated Background --- */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-dim);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+    /* Animated Gradient */
+    background: linear-gradient(-45deg, #0d1117, #161b22, #0a0d12, #1c2128);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    background-attachment: fixed;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Glow Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(173, 216, 230, 0.05), transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- Layout Structure --- */
+.wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    width: 320px;
+    background-color: var(--sidebar-bg);
+    padding: 50px 30px;
+    border-right: 1px solid var(--border);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+}
+
+section {
+    flex: 1;
+    padding: 50px 70px;
+    background-color: rgba(13, 17, 23, 0.7); /* Transparent for animation */
+    backdrop-filter: blur(8px); /* Frosty glass effect */
+}
+
+/* --- UI Elements --- */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+    object-fit: cover;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(173, 216, 230, 0.2);
+}
+
+h1, h2, h3 {
+    color: var(--accent-blue) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #add8e6, #fff, #add8e6);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine { to { background-position: 200% center; } }
+
+.btn-cv {
+    display: block;
+    width: 100%;
+    margin-top: 35px;
+    padding: 12px;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue) !important;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(173, 216, 230, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(173, 216, 230, 0); }
+}
+
+.btn-cv:hover {
+    background: var(--accent-blue);
+    color: var(--bg-dark) !important;
+}
+
+/* --- Tables & Links --- */
+table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
+th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+th { background: #161b22; color: var(--accent-blue); }
+
+a[href*="youtube"] {
+    color: #ff4d4d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+    .wrapper { flex-direction: column; }
+    header { width: 100%; height: auto; position: relative; border-right: none; }
+    section { padding: 40px 20px; }
+}
