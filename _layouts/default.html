@@ -9,9 +9,18 @@
 <body class="loading">
 
     <div id="loader-wrapper">
-        <div id="data-stream"></div> <div class="loader-content">
-            <div class="pie-loader"></div>
-            <p id="loader-text">PARSING EXPERTISE...</p>
+        <div id="data-stream"></div>
+        
+        <div class="loader-content">
+            <div class="chart-container">
+                <div class="axis x-axis"></div>
+                <div class="axis y-axis"></div>
+                <svg class="line-chart" viewBox="0 0 100 40">
+                    <polyline fill="none" stroke="#add8e6" stroke-width="1.5" 
+                              points="0,40 10,35 20,38 30,20 40,25 50,10 60,30 70,15 80,22 90,5 100,20" />
+                </svg>
+            </div>
+            <p id="loader-text">EXTRACTING DATA...</p>
         </div>
     </div>
 
@@ -44,41 +53,27 @@
             const stream = document.getElementById("data-stream");
             const body = document.body;
 
-            // Data Analyst Word Cloud Dictionary
-            const words = [
-                "PYTHON", "SQL", "TABLEAU", "POWER BI", "MACHINE LEARNING", 
-                "BIG DATA", "STATISTICS", "R", "PANDAS", "NUMPY", "ETL", 
-                "DATA MINING", "MATPLOTLIB", "SCIKIT-LEARN", "DEEP LEARNING", 
-                "DATA CLEANING", "EXCEL", "NLP", "REGRESSION", "CLUSTERING"
-            ];
+            const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "R", "STATS", "ETL", "BIG DATA", "NUMPY"];
+            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
 
-            // Spawn words every 120ms
             const spawnWords = setInterval(() => {
                 const el = document.createElement("div");
-                el.className = "cloud-word";
-                
-                // Randomize word and appearance
+                el.className = "pop-word";
                 el.innerText = words[Math.floor(Math.random() * words.length)];
                 
-                // Random position from center
-                const x = (Math.random() - 0.5) * 80; // horizontal spread
-                const y = (Math.random() - 0.5) * 80; // vertical spread
-                el.style.setProperty('--x', `${x}vw`);
-                el.style.setProperty('--y', `${y}vh`);
+                // Random position and color
+                el.style.left = Math.random() * 80 + 10 + "%";
+                el.style.top = Math.random() * 80 + 10 + "%";
+                el.style.color = colors[Math.floor(Math.random() * colors.length)];
                 
-                // Random starting size
-                const size = Math.random() * (2.5 - 0.8) + 0.8;
-                el.style.fontSize = `${size}rem`;
-                
-                // Random position on screen
-                el.style.left = "50%";
-                el.style.top = "50%";
+                // Random size
+                const size = Math.random() * (2.5 - 1) + 1;
+                el.style.fontSize = size + "rem";
 
                 stream.appendChild(el);
-                setTimeout(() => el.remove(), 2000);
-            }, 120);
+                setTimeout(() => el.remove(), 1000);
+            }, 150);
 
-            // Transition to main site
             setTimeout(() => {
                 clearInterval(spawnWords);
                 loader.classList.add("loader-hidden");
