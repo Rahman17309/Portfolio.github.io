@@ -1,17 +1,20 @@
 # M A RAHMAN
-## DATA & BUSINESS ANALYST 
+## DATA & BUSINESS ANALYST
 **Predictive Modeling | Workflow Automation | Strategic Intelligence**
 
 ---
 
 ###  FEATURED IMPACT METRICS
-| Key Performance Indicator | Achievement | Business Unit |
+
+| Metric | Achievement | Business Unit |
 | :--- | :--- | :--- |
-| **Conversion Optimization** | 25% Increase in Trial-to-Paid Conversion | PDA Infotech |
-| **Operational Efficiency** | 60% Reduction in Manual Reporting Effort | PDA Infotech |
-| **Forecasting Precision** | 85% Accuracy in Stock Trend Predictions | AI Variant |
-| **Resource Optimization** | 12% Reduction in Grid Management Costs | AI Variant |
-| **Risk Reduction** | 18% Decrease in Financial False Positives | AI Variant |
+| 📈 **Conversion Optimization** | `+25%` Trial-to-Paid Conversion | PDA Infotech |
+| ⚙️ **Operational Efficiency** | `60%` Reduction in Manual Effort | PDA Infotech |
+| 🔮 **Forecasting Precision** | `85%` Accuracy in Stock Trends | AI Variant |
+| ⚡ **Resource Optimization** | `12%` Reduction in Grid Costs | AI Variant |
+| 🛡️ **Risk Reduction** | `18%` Decrease in False Positives | AI Variant |
+
+---
 
 ---
 
