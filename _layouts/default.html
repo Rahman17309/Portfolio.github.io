@@ -11,7 +11,6 @@
 
     <div id="loader-wrapper">
         <div id="data-stream"></div>
-        
         <div class="loader-content">
             <div class="chart-container">
                 <div class="axis x-axis"></div>
@@ -34,17 +33,9 @@
                 <span class="info-label">Email</span> rahmandatascience09@gmail.com
                 
                 <span class="info-label">Professional Hubs</span>
-                <a href="https://linkedin.com/in/rahman17309" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a> / 
-                <a href="https://github.com/Rahman17309" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-
-                <span class="info-label">Featured Project</span>
-                <div class="project-btn-container">
-                    <a href="https://github.com/Rahman17309/Apple-stock-forecasting-project-" class="btn-project btn-gh" target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=r2wZKC7ocJk" class="btn-project btn-yt" target="_blank">
-                        <i class="fab fa-youtube"></i> Demo
-                    </a>
+                <div class="hub-links">
+                    <a href="https://linkedin.com/in/rahman17309" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Rahman17309" class="social-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
@@ -54,6 +45,54 @@
         </header>
 
         <section>
+            <h1>Technical Projects</h1>
+
+            <div class="project-card">
+                <h2>Apple Stock Price Forecasting</h2>
+                <p><strong>Objective:</strong> Developed a high-precision forecasting framework to predict AAPL stock prices for a 30-day horizon.</p>
+                <p><strong>The Challenge:</strong> Building a robust model to minimize RMSE while capturing short-term volatility and long-term trends.</p>
+                <div class="project-btn-container">
+                    <a href="https://github.com/Rahman17309/Apple-stock-forecasting-project-" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="https://www.youtube.com/watch?v=r2wZKC7ocJk" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-card">
+                <h2>Bankruptcy Prevention & Risk Assessment</h2>
+                <p><strong>Objective:</strong> Developed a proactive financial diagnostic tool to predict corporate insolvency based on risk factors.</p>
+                <p><strong>The Challenge:</strong> Maximize Recall to identify all at-risk firms while minimizing False Positives.</p>
+                <div class="project-btn-container">
+                    <a href="https://github.com/Rahman17309/Bankruptcy-Prevention-Project" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="https://youtu.be/jHw8JbTdTC4" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-card">
+                <h2>NLP Sentiment & Customer Intelligence</h2>
+                <p><strong>Objective:</strong> Engineered an end-to-end NLP pipeline to classify customer sentiment from Amazon reviews.</p>
+                <p><strong>The Challenge:</strong> Accurately categorizing emotional nuances in unstructured text containing slang.</p>
+                <div class="project-btn-container">
+                    <a href="https://github.com/Rahman17309/NLP-Sentiment-Classification-Analysis" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="https://youtu.be/ChRp_Pf63jE?si=bx0eNHKJa2J4MfPl" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-card">
+                <h2>Solar Power Prediction</h2>
+                <p><strong>Objective:</strong> Developed a precision forecasting tool for solar energy output based on weather variables.</p>
+                <p><strong>The Challenge:</strong> Managing high intermittency for efficient grid management.</p>
+                <div class="project-btn-container">
+                    <a href="https://github.com/Rahman17309/Solar-Power-Prediction" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                    <a href="https://youtu.be/sFNEGxjOMiI?si=l29N0xLx2-k_Cp5z" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
+                </div>
+            </div>
+
             {{ content }}
         </section>
     </div>
@@ -62,7 +101,6 @@
         window.addEventListener("load", function() {
             const loader = document.getElementById("loader-wrapper");
             const stream = document.getElementById("data-stream");
-
             const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
             const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
 
@@ -73,9 +111,7 @@
                 el.style.left = Math.random() * 80 + 10 + "%";
                 el.style.top = Math.random() * 80 + 10 + "%";
                 el.style.color = colors[Math.floor(Math.random() * colors.length)];
-                const size = Math.random() * (2 - 0.8) + 0.8;
-                el.style.fontSize = size + "rem";
-
+                el.style.fontSize = (Math.random() * (2 - 0.8) + 0.8) + "rem";
                 stream.appendChild(el);
                 setTimeout(() => el.remove(), 1000);
             }, 150);
