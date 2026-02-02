@@ -2,7 +2,14 @@
 
 ## DATA & BUSINESS ANALYST
 
-**Predictive Modeling | Workflow Automation | Strategic Intelligence | ML Deployment | Advanced Analytics**
+<div align="center">
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![SQL](https://img.shields.io/badge/sql-003B57?style=for-the-badge&logo=postgresql&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/ML-Predictive%20Modeling-brightgreen?style=for-the-badge)
+![Automation](https://img.shields.io/badge/Automation-Workflow-orange?style=for-the-badge)
+
+</div>
 
 ---
 
