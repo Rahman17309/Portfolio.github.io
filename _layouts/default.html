@@ -10,7 +10,6 @@
 
     <div id="loader-wrapper">
         <div id="data-stream"></div>
-        
         <div class="loader-content">
             <div class="chart-container">
                 <div class="axis x-axis"></div>
@@ -28,12 +27,21 @@
         <header>
             <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" alt="M.A. Rahman" class="profile-img">
             
+            <h1 class="sidebar-name">M A RAHMAN</h1>
+            <h2 class="sidebar-title">Data & Business Analyst</h2>
+
             <div class="sidebar-info">
-                <span class="info-label">Current Location</span> Dubai, UAE
-                <span class="info-label">Email</span> rahmandatascience09@gmail.com
+                <span class="info-label">Current Location</span> 
+                <p class="info-text">Dubai, UAE</p>
+                
+                <span class="info-label">Email</span> 
+                <p class="info-text">rahmandatascience09@gmail.com</p>
+                
                 <span class="info-label">Professional Hubs</span>
-                <a href="https://linkedin.com/in/rahman17309" class="social-link">LinkedIn</a> / 
-                <a href="https://github.com/Rahman17309" class="social-link">GitHub</a>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/rahman17309" class="social-link">LinkedIn</a> / 
+                    <a href="https://github.com/Rahman17309" class="social-link">GitHub</a>
+                </div>
             </div>
 
             <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" download class="btn-cv">
@@ -52,7 +60,7 @@
             const stream = document.getElementById("data-stream");
 
             const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
-            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
+            const colors = ["#add8e6", "#ffffff", "#baffc9", "#ffffba", "#ffdfba"];
 
             const spawnWords = setInterval(() => {
                 const el = document.createElement("div");
@@ -61,7 +69,7 @@
                 el.style.left = Math.random() * 80 + 10 + "%";
                 el.style.top = Math.random() * 80 + 10 + "%";
                 el.style.color = colors[Math.floor(Math.random() * colors.length)];
-                const size = Math.random() * (2 - 0.8) + 0.8;
+                const size = Math.random() * (1.5 - 0.7) + 0.7;
                 el.style.fontSize = size + "rem";
 
                 stream.appendChild(el);
@@ -71,7 +79,7 @@
             setTimeout(() => {
                 clearInterval(spawnWords);
                 loader.classList.add("loader-hidden");
-            }, 3500); 
+            }, 3000); 
         });
     </script>
 </body>
