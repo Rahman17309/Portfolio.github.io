@@ -1,104 +1,157 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% seo %}
-    
-    <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
+
 </head>
 
 <body>
 
-    <div id="loader-wrapper">
-        <div id="data-stream"></div>
-        <div class="loader-content">
-            <div class="chart-container">
-                <div class="axis x-axis"></div>
-                <div class="axis y-axis"></div>
-                <svg class="line-chart" viewBox="0 0 100 40">
-                    <polyline fill="none" stroke="#add8e6" stroke-width="1" 
-                              points="0,35 10,30 20,38 30,15 40,25 50,5 60,32 70,10 80,25 90,2 100,20" />
-                </svg>
-            </div>
-            <p id="loader-text">EXTRACTING DATA...</p>
-        </div>
-    </div>
 
-    <div class="wrapper">
-        
-        <header>
-            <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" 
-                 alt="M.A. Rahman" class="profile-img">
-            
-            <div class="sidebar-info">
-                <div class="info-group">
-                    <span class="info-label">Current Location</span>
-                    <p>Dubai, UAE</p>
-                </div>
 
-                <div class="info-group">
-                    <span class="info-label">Email</span>
-                    <p>rahmandatascience09@gmail.com</p>
-                </div>
+    <div id="loader-wrapper">
 
-                <div class="info-group">
-                    <span class="info-label">Professional Hubs</span>
-                    <nav class="social-nav">
-                        <a href="https://linkedin.com/in/rahman17309" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/Rahman17309" class="social-link" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </nav>
-                </div>
-            </div>
+        <div id="data-stream"></div>
 
-            <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" 
-               download class="btn-cv">
-               <i class="fas fa-file-download"></i> DOWNLOAD RESUME
-            </a>
-        </header>
+        
 
-        <main>
-            <section class="content-area">
-                {{ content }}
-            </section>
-        </main>
+        <div class="loader-content">
 
-    </div>
+            <div class="chart-container">
 
-    <script>
-        window.addEventListener("load", function() {
-            const loader = document.getElementById("loader-wrapper");
-            const stream = document.getElementById("data-stream");
+                <div class="axis x-axis"></div>
 
-            const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
-            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
+                <div class="axis y-axis"></div>
 
-            const spawnWords = setInterval(() => {
-                const el = document.createElement("div");
-                el.className = "pop-word";
-                el.innerText = words[Math.floor(Math.random() * words.length)];
-                el.style.left = Math.random() * 80 + 10 + "%";
-                el.style.top = Math.random() * 80 + 10 + "%";
-                el.style.color = colors[Math.floor(Math.random() * colors.length)];
-                
-                const size = Math.random() * (1.8 - 0.8) + 0.8;
-                el.style.fontSize = size + "rem";
+                <svg class="line-chart" viewBox="0 0 100 40">
 
-                stream.appendChild(el);
-                setTimeout(() => el.remove(), 1000);
-            }, 150);
+                    <polyline fill="none" stroke="#add8e6" stroke-width="1" 
 
-            setTimeout(() => {
-                clearInterval(spawnWords);
-                loader.classList.add("loader-hidden");
-            }, 3500); 
-        });
-    </script>
+                              points="0,35 10,30 20,38 30,15 40,25 50,5 60,32 70,10 80,25 90,2 100,20" />
+
+                </svg>
+
+            </div>
+
+            <p id="loader-text">EXTRACTING DATA...</p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="wrapper">
+
+        <header>
+
+            <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" alt="M.A. Rahman" class="profile-img">
+
+            
+
+            <div class="sidebar-info">
+
+                <span class="info-label">Current Location</span> Dubai, UAE
+
+                <span class="info-label">Email</span> rahmandatascience09@gmail.com
+
+                <span class="info-label">Professional Hubs</span>
+
+                <a href="https://linkedin.com/in/rahman17309" class="social-link">LinkedIn</a> / 
+
+                <a href="https://github.com/Rahman17309" class="social-link">GitHub</a>
+
+            </div>
+
+
+
+            <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" download class="btn-cv">
+
+                DOWNLOAD RESUME
+
+            </a>
+
+        </header>
+
+
+
+        <section>
+
+            {{ content }}
+
+        </section>
+
+    </div>
+
+
+
+    <script>
+
+        window.addEventListener("load", function() {
+
+            const loader = document.getElementById("loader-wrapper");
+
+            const stream = document.getElementById("data-stream");
+
+
+
+            const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
+
+            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
+
+
+
+            const spawnWords = setInterval(() => {
+
+                const el = document.createElement("div");
+
+                el.className = "pop-word";
+
+                el.innerText = words[Math.floor(Math.random() * words.length)];
+
+                el.style.left = Math.random() * 80 + 10 + "%";
+
+                el.style.top = Math.random() * 80 + 10 + "%";
+
+                el.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                const size = Math.random() * (2 - 0.8) + 0.8;
+
+                el.style.fontSize = size + "rem";
+
+
+
+                stream.appendChild(el);
+
+                setTimeout(() => el.remove(), 1000);
+
+            }, 150);
+
+
+
+            setTimeout(() => {
+
+                clearInterval(spawnWords);
+
+                loader.classList.add("loader-hidden");
+
+            }, 3500); 
+
+        });
+
+    </script>
 
 </body>
+
 </html>
+
+this is my html please update and give me the whole code 
