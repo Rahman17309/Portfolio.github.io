@@ -1,126 +1,157 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url }}">
+
 </head>
+
 <body>
 
-    <div id="loader-wrapper">
-        <div id="data-stream"></div>
-        <div class="loader-content">
-            <div class="chart-container">
-                <div class="axis x-axis"></div>
-                <div class="axis y-axis"></div>
-                <svg class="line-chart" viewBox="0 0 100 40">
-                    <polyline fill="none" stroke="#add8e6" stroke-width="1" 
-                             points="0,35 10,30 20,38 30,15 40,25 50,5 60,32 70,10 80,25 90,2 100,20" />
-                </svg>
-            </div>
-            <p id="loader-text">EXTRACTING DATA...</p>
-        </div>
-    </div>
 
-    <div class="wrapper">
-        <header>
-            <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" alt="M.A. Rahman" class="profile-img">
-            
-            <div class="sidebar-info">
-                <span class="info-label">Current Location</span> Dubai, UAE
-                <span class="info-label">Email</span> rahmandatascience09@gmail.com
-                
-                <span class="info-label">Professional Hubs</span>
-                <div class="hub-links">
-                    <a href="https://linkedin.com/in/rahman17309" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/Rahman17309" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
 
-            <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" download class="btn-cv">
-                DOWNLOAD RESUME
-            </a>
-        </header>
+    <div id="loader-wrapper">
 
-        <section>
-            <h1>Technical Projects</h1>
+        <div id="data-stream"></div>
 
-            <div class="project-card">
-                <h2>Apple Stock Price Forecasting</h2>
-                <p><strong>Objective:</strong> Developed a high-precision forecasting framework to predict AAPL stock prices for a 30-day horizon.</p>
-                <p><strong>The Challenge:</strong> Building a robust model to minimize RMSE while capturing short-term volatility and long-term trends.</p>
-                <div class="project-btn-container">
-                    <a href="https://github.com/Rahman17309/Apple-stock-forecasting-project-" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="https://www.youtube.com/watch?v=r2wZKC7ocJk" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
-                </div>
-            </div>
+        
 
-            <hr>
+        <div class="loader-content">
 
-            <div class="project-card">
-                <h2>Bankruptcy Prevention & Risk Assessment</h2>
-                <p><strong>Objective:</strong> Developed a proactive financial diagnostic tool to predict corporate insolvency based on risk factors.</p>
-                <p><strong>The Challenge:</strong> Maximize Recall to identify all at-risk firms while minimizing False Positives.</p>
-                <div class="project-btn-container">
-                    <a href="https://github.com/Rahman17309/Bankruptcy-Prevention-Project" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="https://youtu.be/jHw8JbTdTC4" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
-                </div>
-            </div>
+            <div class="chart-container">
 
-            <hr>
+                <div class="axis x-axis"></div>
 
-            <div class="project-card">
-                <h2>NLP Sentiment & Customer Intelligence</h2>
-                <p><strong>Objective:</strong> Engineered an end-to-end NLP pipeline to classify customer sentiment from Amazon reviews.</p>
-                <p><strong>The Challenge:</strong> Accurately categorizing emotional nuances in unstructured text containing slang.</p>
-                <div class="project-btn-container">
-                    <a href="https://github.com/Rahman17309/NLP-Sentiment-Classification-Analysis" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="https://youtu.be/ChRp_Pf63jE?si=bx0eNHKJa2J4MfPl" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
-                </div>
-            </div>
+                <div class="axis y-axis"></div>
 
-            <hr>
+                <svg class="line-chart" viewBox="0 0 100 40">
 
-            <div class="project-card">
-                <h2>Solar Power Prediction</h2>
-                <p><strong>Objective:</strong> Developed a precision forecasting tool for solar energy output based on weather variables.</p>
-                <p><strong>The Challenge:</strong> Managing high intermittency for efficient grid management.</p>
-                <div class="project-btn-container">
-                    <a href="https://github.com/Rahman17309/Solar-Power-Prediction" class="btn-project btn-gh" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                    <a href="https://youtu.be/sFNEGxjOMiI?si=l29N0xLx2-k_Cp5z" class="btn-project btn-yt" target="_blank"><i class="fab fa-youtube"></i> Watch Demo</a>
-                </div>
-            </div>
+                    <polyline fill="none" stroke="#add8e6" stroke-width="1" 
 
-            {{ content }}
-        </section>
-    </div>
+                              points="0,35 10,30 20,38 30,15 40,25 50,5 60,32 70,10 80,25 90,2 100,20" />
 
-    <script>
-        window.addEventListener("load", function() {
-            const loader = document.getElementById("loader-wrapper");
-            const stream = document.getElementById("data-stream");
-            const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
-            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
+                </svg>
 
-            const spawnWords = setInterval(() => {
-                const el = document.createElement("div");
-                el.className = "pop-word";
-                el.innerText = words[Math.floor(Math.random() * words.length)];
-                el.style.left = Math.random() * 80 + 10 + "%";
-                el.style.top = Math.random() * 80 + 10 + "%";
-                el.style.color = colors[Math.floor(Math.random() * colors.length)];
-                el.style.fontSize = (Math.random() * (2 - 0.8) + 0.8) + "rem";
-                stream.appendChild(el);
-                setTimeout(() => el.remove(), 1000);
-            }, 150);
+            </div>
 
-            setTimeout(() => {
-                clearInterval(spawnWords);
-                loader.classList.add("loader-hidden");
-            }, 3500); 
-        });
-    </script>
+            <p id="loader-text">EXTRACTING DATA...</p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="wrapper">
+
+        <header>
+
+            <img src="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/images/profile-pic.png" alt="M.A. Rahman" class="profile-img">
+
+            
+
+            <div class="sidebar-info">
+
+                <span class="info-label">Current Location</span> Dubai, UAE
+
+                <span class="info-label">Email</span> rahmandatascience09@gmail.com
+
+                <span class="info-label">Professional Hubs</span>
+
+                <a href="https://linkedin.com/in/rahman17309" class="social-link">LinkedIn</a> / 
+
+                <a href="https://github.com/Rahman17309" class="social-link">GitHub</a>
+
+            </div>
+
+
+
+            <a href="https://raw.githubusercontent.com/Rahman17309/Portfolio.github.io/main/Resume/MA-RAHMAN.pdf" download class="btn-cv">
+
+                DOWNLOAD RESUME
+
+            </a>
+
+        </header>
+
+
+
+        <section>
+
+            {{ content }}
+
+        </section>
+
+    </div>
+
+
+
+    <script>
+
+        window.addEventListener("load", function() {
+
+            const loader = document.getElementById("loader-wrapper");
+
+            const stream = document.getElementById("data-stream");
+
+
+
+            const words = ["PYTHON", "SQL", "TABLEAU", "POWER BI", "PANDAS", "ETL", "BIG DATA", "NUMPY", "R", "SCIKIT-LEARN"];
+
+            const colors = ["#add8e6", "#ffb3ba", "#baffc9", "#ffffba", "#ffdfba", "#e0bbe4"];
+
+
+
+            const spawnWords = setInterval(() => {
+
+                const el = document.createElement("div");
+
+                el.className = "pop-word";
+
+                el.innerText = words[Math.floor(Math.random() * words.length)];
+
+                el.style.left = Math.random() * 80 + 10 + "%";
+
+                el.style.top = Math.random() * 80 + 10 + "%";
+
+                el.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                const size = Math.random() * (2 - 0.8) + 0.8;
+
+                el.style.fontSize = size + "rem";
+
+
+
+                stream.appendChild(el);
+
+                setTimeout(() => el.remove(), 1000);
+
+            }, 150);
+
+
+
+            setTimeout(() => {
+
+                clearInterval(spawnWords);
+
+                loader.classList.add("loader-hidden");
+
+            }, 3500); 
+
+        });
+
+    </script>
+
 </body>
+
 </html>
+
+this is my html please update and give me the whole code 
