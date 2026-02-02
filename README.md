@@ -4,6 +4,7 @@
 ## DATA & BUSINESS ANALYST
 ---
 **Predictive Modeling | Workflow Automation | Strategic Intelligence | ML Deployment | Advanced Analytics**
+
 ---
 
 ### FEATURED IMPACT METRICS
