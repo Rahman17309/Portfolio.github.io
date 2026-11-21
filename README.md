@@ -99,6 +99,23 @@
 
 ### TECHNICAL PROJECTS
 
+####  PRODUCT FUNNEL & CONVERSION RATE OPTIMIZATION
+**Objective:** Find where an e-commerce funnel loses customers, put a ₹ value on each fix, and test whether a new one-page checkout actually works.
+
+**Methodology & Technical Implementation:**
+* **Data Quality:** Cleaned 285k clickstream events: bot detection by behaviour, duplicate events, mixed timestamp formats, QA test orders. Every rule is logged for audit.
+* **SQL Deep-Dive (DuckDB):** Segment funnels by device, channel, city tier, page speed and visitor type using CTEs, `UNPIVOT`, window functions and `QUALIFY`.
+* **A/B Testing:** Sample-ratio and balance checks, two-proportion z-test with confidence intervals, guardrail metrics, Bonferroni-corrected segments and regression adjustment.
+* **Dashboard:** Interactive Plotly dashboard with a segment-filterable funnel.
+
+**Business Impact & Results:**
+* **Experiment:** One-page checkout lifted conversion **3.55% → 4.16% (+17%, p ≈ 0.001)**; mobile checkout completion rose 8.4 points. Recommendation: roll out.
+* **Prioritisation:** Fixing mobile checkout is worth ~**₹26 L/year**, more than page speed, ad targeting and payment fixes combined.
+
+**Links:** [GitHub Repository](https://github.com/Rahman17309/product-funnel-conversion-analytics)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+
 
 ####  APPLE STOCK PRICE FORECASTING (TIME SERIES ANALYSIS)
 **Objective:** Developed a high-precision forecasting framework to predict Apple Inc. (AAPL) stock prices for a 30-day horizon, utilizing historical data from 2012 to 2019.
@@ -115,10 +132,10 @@ Stock market data is inherently non-stationary and noisy. The goal was to build 
 * **Evaluation:** Benchmarked models using MSE, MAE, and RMSE to identify the most reliable predictor for 30-day trajectories.
 
 **Business Impact & Results:**
-* **Precision:** Achieved an **85% accuracy rate** in trend prediction with a **15% reduction in RMSE** compared to baseline models.
-* **Intelligence:** Successfully generated a 30-day price forecast that identified key resistance and support levels for informed investment decision-making.
+* **Model comparison:** One-day-ahead LSTM reached a test RMSE of about **$6**; tuned Holt-Winters (MAE ≈ $19) and Prophet (RMSE ≈ $27) forecast the whole test period at once.
+* **Output:** A 30-day price forecast served through an interactive Streamlit app, with a clear note on comparing models at the same horizon.
 
-**Links:** [GitHub Repository](https://github.com/Rahman17309/Apple-stock-forecasting-project-) | [Watch Project Demo](https://www.youtube.com/watch?v=r2wZKC7ocJk)
+**Links:** [GitHub Repository](https://github.com/Rahman17309/Apple-Stock-Forecasting) | [Watch Project Demo](https://www.youtube.com/watch?v=r2wZKC7ocJk)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
 
@@ -137,8 +154,8 @@ Financial distress is caused by non-linear interactions (e.g., management qualit
 * **Deployment:** Launched an interactive **Streamlit** dashboard allowing users to receive real-time bankruptcy probability predictions via risk-factor sliders.
 
 **Business Impact & Results:**
-* **Enhanced Accuracy:** The optimized Random Forest model delivered a **22% improvement in accuracy** over standard models.
-* **Risk Mitigation:** Reduced false positives by **18%**, ensuring stable companies were not misclassified as distressed.
+* **Data quality:** Found that 147 of 250 rows were exact duplicates and removed them before modelling, preventing inflated scores.
+* **Insight:** Competitiveness (r = −0.90), credibility and financial flexibility drive bankruptcy risk; an explainable Logistic Regression matched the complex models (cross-validated score 0.996).
 
 **Links:** [GitHub Repository](https://github.com/Rahman17309/Bankruptcy-Prevention-Project) | [Watch Project Demo](https://youtu.be/jHw8JbTdTC4)
 
@@ -158,8 +175,8 @@ Customer feedback is unstructured and contains domain-specific slang. The goal w
 * **Deployment:** Developed a **Flask-based REST API** and web interface for real-time sentiment predictions from raw text or URLs.
 
 **Business Impact & Results:**
-* **Classification Excellence:** Achieved an **87% overall accuracy** and an **0.85 F1-Score**, a 20% improvement over baseline metrics.
-* **Operational Scalability:** Automated the feedback loop, reducing manual market research time from weeks to minutes.
+* **Classification:** TF-IDF + Logistic Regression reached **96% accuracy** and **0.92 macro-F1** on held-out reviews, outperforming LSTM/GRU models at this data size.
+* **Operational Scalability:** Automated the review collection and classification loop so negative feedback surfaces without manual reading.
 
 **Links:** [GitHub Repository](https://github.com/Rahman17309/NLP-Sentiment-Classification-Analysis) | [Watch Project Demo](https://youtu.be/ChRp_Pf63jE?si=bx0eNHKJa2J4MfPl)
 
@@ -178,8 +195,8 @@ Solar generation is highly intermittent. For energy providers, inaccurate foreca
 * **Deployment:** Built a **Streamlit** web application, allowing grid operators to input weather parameters and receive instantaneous power output predictions in kilowatts (kW).
 
 **Business Impact & Results:**
-* **Forecasting Accuracy:** Achieved an **88% accuracy rate**, significantly outperforming traditional persistence-based methods.
-* **Operational Efficiency:** Contributed to a **12% reduction in operational grid costs** by enabling data-driven resource allocation.
+* **Forecasting Accuracy:** Tuned Gradient Boosting explained **90% of the variance** on the test set (R² 0.90; 0.85 cross-validated) across 8 models compared.
+* **Deployment:** Streamlit app where operators enter weather inputs and get an instant power-output estimate.
 
 **Links:** [GitHub Repository](https://github.com/Rahman17309/Solar-Power-Prediction) | [Watch Project Demo](https://youtu.be/sFNEGxjOMiI?si=l29N0xLx2-k_Cp5z)
 
